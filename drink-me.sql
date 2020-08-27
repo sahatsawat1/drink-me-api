@@ -2,8 +2,12 @@ CREATE DATABASE IF NOT EXISTS `drink-me-DB`;
 
 USE `drink-me-DB`;
 
-DROP TABLE IF EXISTS `Something_Something`; -- เอา FK ออกก่อน
-DROP TABLE IF EXISTS `Students`;
+DROP TABLE IF EXISTS `Tables_Order_Drinks`; -- เอา FK ออกก่อน
+DROP TABLE IF EXISTS `Payment`;
+DROP TABLE IF EXISTS `Bar`; -- เอา FK ออกก่อน
+DROP TABLE IF EXISTS `Tables`;
+DROP TABLE IF EXISTS `Drinks`; -- เอา FK ออกก่อน
+DROP TABLE IF EXISTS `Users`;
 
 CREATE TABLE `Users`(
     `user_id` INT NOT NULL AUTO_INCREMENT,
