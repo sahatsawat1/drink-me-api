@@ -49,7 +49,7 @@ CREATE TABLE `Tables`(
     `price` INT,
     `seat` INT,
     `status` INT,
-    `user` INT,
+    `user` VARCHAR,
 
     PRIMARY KEY(`table_id`)
     CONSTRAINT `user_id_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES (`Users`)(`user_id`)
@@ -58,8 +58,8 @@ CREATE TABLE `Tables`(
 CREATE TABLE `Payment`(
     `payment_id` INT NOT NULL AUTO_INCREMENT,
     `drink_id` INT,
-    `first_name` INT,
-    `last_name` INT,
+    `first_name` VARCHAR(120),
+    `last_name` VARCHAR(120),
     `total` INT,
     `Account_number` INT,
     `ID_card` INT,
@@ -72,7 +72,7 @@ CREATE TABLE `Payment`(
 CREATE TABLE `Bar`(
     `bar_id` INT NOT NULL AUTO_INCREMENT,
     `payment_id` INT,
-    `brand` INT,
+    `brand` VARCHAR(120),
     `Account_number` INT,
     `phone_number` INT,
 
