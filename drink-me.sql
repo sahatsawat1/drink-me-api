@@ -21,7 +21,8 @@ CREATE TABLE `Users`(
     `mail` VARCHAR(120) NOT NULL UNIQUE,
     `password` VARCHAR(120) NOT NULL,
 
-    PRIMARY KEY(`id`)
+    PRIMARY KEY(`user_id`)
+    CONSTRAINT `payment_id_ibfk_1` FOREIGN KEY (`payment_id`) REFERENCES (`Payment`)(`payment_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET utf8mb4;
 
 CREATE TABLE `Drinks`(
@@ -31,15 +32,16 @@ CREATE TABLE `Drinks`(
     `amount` VARCHAR(120) NOT NULL,
 
     PRIMARY KEY(`drink_id`)
+    CONSTRAINT `user_id_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES (`Users`)(`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET utf8mb4;
 
-CREATE TABLE `Tables_Order_Drinks`(
+CREATE TABLE `Users_Order_Drinks`(
     `order_id` INT NOT NULL AUTO_INCREMENT,
     `table_id` INT,
     `drink_id` INT, 
 
     PRIMARY KEY(`order_id`)
-    CONSTRAINT `table_id_ibfk_1` FOREIGN KEY (`table_id`) REFERENCES `Tables`(`table_id`)
+    CONSTRAINT `user_id_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `Users`(`user_id`)
     CONSTRAINT `drink_id_ibfk_2` FOREIGN KEY (`drink_id`) REFERENCES `Drinks`(`drink_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET utf8mb4;
 
