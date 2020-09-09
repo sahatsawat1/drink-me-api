@@ -1,4 +1,5 @@
 'use strict'
+const Database = use('Database')
 
 /** @type {import('@adonisjs/lucid/src/Schema')} */
 const Schema = use('Schema')
