@@ -1,5 +1,4 @@
 'use strict'
-
 /*
 |--------------------------------------------------------------------------
 | Routes
@@ -12,10 +11,14 @@
 | http://adonisjs.com/docs/4.1/routing
 |
 */
-
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
-
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
+Route.group(() => {
+  Route.resource('/Bar', 'BarController')
+  Route.resource('/Drink','DrinkController')
+  Route.resource('/Payment','PaymentController')
+  Route.resource('/User','UserController')
+}).prefix('api/v1')
