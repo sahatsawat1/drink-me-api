@@ -6,11 +6,11 @@ const Schema = use('Schema')
 class TABLESchema extends Schema {
   up () {
     this.create('tables', (table) => {
-      table.increments("table_id");
-      table.integer("user_id");
-      table.integer("seat");
-      table.string("status",1);
-      table.string("user",150);
+      table.increments("table_id")
+      table.integer("user_id").notNullable()
+      table.integer("seat").notNullable()
+      table.string("status",1).notNullable()
+      table.string("user",150).notNullable()
       table.timestamps()
 
       table

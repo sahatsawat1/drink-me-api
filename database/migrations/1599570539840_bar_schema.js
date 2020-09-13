@@ -6,10 +6,10 @@ const Schema = use('Schema')
 class BarSchema extends Schema {
   up () {
     this.create('bars', (table) => {
-      table.increments( "bar_id");
-      table.integer("payment_id");
-      table.string("brand",150).notNullable();
-      table.integer("phone_number",10);
+      table.increments( "bar_id").notNullable()
+      table.integer("payment_id").notNullable()
+      table.string("brand",150).notNullable()
+      table.integer("phone_number",10).notNullable()
       table.timestamps();
 
       table

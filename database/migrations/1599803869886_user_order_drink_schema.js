@@ -6,10 +6,10 @@ const Schema = use('Schema')
 class UserOrderDrinkSchema extends Schema {
   up () {
     this.create('user_order_drinks', (table) => {
-      table.increments("order_id");
-      table.integer("user_id");
-      table.integer("drink_id");
-      table.timestamps();
+      table.increments("order_id")
+      table.integer("user_id").notNullable()
+      table.integer("drink_id").notNullable()
+      table.timestamps()
 
       table
       .foreign("user_id")

@@ -6,11 +6,11 @@ const Schema = use('Schema')
 class DrinkSchema extends Schema {
   up () {
     this.create('drinks', (table) => {
-      table.increments("drink_id");
-      table.integer("price");
-      table.string("brand",150);
-      table.integer("amount");
-      table.timestamps();
+      table.increments("drink_id")
+      table.float("price").notNullable()
+      table.string("brand",150).notNullable()
+      table.integer("amount").notNullable()
+      table.timestamps()
     })
   }
 
