@@ -37,7 +37,7 @@ test('hould return more than one error if pass many incorrect data', async ({ as
     first_name: "wowza",
     last_name: "stang",
     email: "koarawit",
-    password: "123456789"
+    password: "1234"
   })
   assert.isAbove(validatedData.error.length, 1)
 })
