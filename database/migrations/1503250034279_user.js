@@ -11,7 +11,7 @@ class UserSchema extends Schema {
       table.string("first_name",150).notNullable()
       table.string("last_name",150).notNullable()
       table.string("gender" ['M', 'F','O']).notNullable()
-      table.date("birthOfdate").notNullable()
+      table.integer("birthOfdate").notNullable()
       table.integer("ID_card")
       table.integer("phone_number")
       table.integer("payment_id")

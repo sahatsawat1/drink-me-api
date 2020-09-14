@@ -13,12 +13,14 @@
 */
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
-Route.on('/').render('welcome')
+Route.get("/", () => {
+  return { greeting: "Yes" };
+});
 Route.group(() => {
-  Route.resource('/Bar', 'BarController')
-  Route.resource('/Drink','DrinkController')
-  Route.resource('/Payment','PaymentController')
-  Route.resource('/User','UserController')
+  Route.resource('/bars', 'BarController')
+  Route.resource('/drinks','DrinkController')
+  Route.resource('/payments','PaymentController')
+  Route.resource('/users','UserController')
 }).prefix('api/v1')
 
 Route.get('/login', "AuthController.login")
