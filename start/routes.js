@@ -29,7 +29,7 @@ Route.get("/register" , "AuthController.register")
 Route.post("/register" , "AuthController.registerUser")
 Route.get("/api/register" , "AuthController.registerUser")
 
-Route.post('/booking', "TableController.booking").middleware('auth')
+Route.post('/booking', "TableController.booking")
 
 
-Route.get('/logout', "AuthController.logout").middleware('auth')
+Route.get('/logout', "AuthController.logout")
