@@ -4,6 +4,12 @@
 const Model = use('Model')
 
 class Table extends Model {
+    static get primaryKey() {
+        return "table_id";
+      }
+      users(){
+        return this.hasMany('App/models/User')
+}
 }
 
 module.exports = Table

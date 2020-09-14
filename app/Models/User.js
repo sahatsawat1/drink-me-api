@@ -14,9 +14,18 @@ class User extends Model {
     static get primaryKey(){
         return 'user_id'
     }
-    subject(){
+    tables(){
         return this.hasMany('App/Models/Table')
     }
+    payments(){
+      return this.hasMany('App/Models/Payment')
+  }
+  tables(){
+    return this.hasMany('App/Models/Table')
+}
+user_order_drinks(){
+  return this.hasMany('App/Models/UserOderDrink')
+}
 }
 
 module.exports = User
