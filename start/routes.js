@@ -14,7 +14,11 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 Route.get('/', () => {
-  return { greeting: 'Hello world in JSON' }
+Route.get('/login', "AuthController.login")
+Route.post("/login", "AuthController.loginUser")
+Route.get("/register" , "AuthController.register")
+Route.post("/register" , "AuthController.registerUser")
+Route.get("/api/register" , "AuthController.registerUser")
 })
 Route.group(() => {
   Route.resource('/Bar', 'BarController')
