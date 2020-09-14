@@ -5,13 +5,13 @@ let token
 let currentUsername
 class AuthController {
     async login ( { view, request, response, auth } = context) {
-        return view.render("component-login")
+        return 1
     }
 
    async loginUser({ view, request, auth }){
         const { email, password } = request.all()
         await auth.attempt(email, password)
-        return view.render("components")
+        return 1
     }
 
     register({view}) {
