@@ -54,11 +54,11 @@ function numberTypeParamValidator(number){
     }
     
     async store ({request}){
-        const {first_name,last_name,email,password} = request.body
+        const {first_name, last_name,email,password} = request.body
         const rules ={
             first_name:'required',
             last_name:'required',
-            email:'required|email|unique:teachers,email',
+            email:'required|email|unique:users,email',
             password:'required|min:8',
         }
         const validation = await Validator.validateAll(request.body,rules)
