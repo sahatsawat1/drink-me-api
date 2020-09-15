@@ -14,6 +14,7 @@ class BarSchema extends Schema {
 
       table
       .foreign("payment_id")
+      .references("payments.payment_id")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
     
