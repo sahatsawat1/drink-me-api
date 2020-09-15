@@ -28,7 +28,6 @@ Route.post("/login", "AuthController.loginUser")
 Route.get("/register" , "AuthController.register")
 Route.post("/register" , "AuthController.registerUser")
 Route.get("/api/register" , "AuthController.registerUser")
-
 Route.post('/booking', "TableController.booking")
 
 
