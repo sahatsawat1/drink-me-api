@@ -15,6 +15,7 @@ class TABLESchema extends Schema {
 
       table
       .foreign("user_id")
+      .references("users.user_id")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
     })

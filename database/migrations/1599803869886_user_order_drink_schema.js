@@ -13,10 +13,12 @@ class UserOrderDrinkSchema extends Schema {
 
       table
       .foreign("user_id")
+      .references("users.user_id")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
       table
       .foreign("drink_id")
+      .references("drinks.drink_id")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
     })
