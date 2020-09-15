@@ -3,10 +3,11 @@
 const Database = use('Database')
 const Hash = use('Hash')
 const Validator = use('Validator')
+const User = use("App/Models/User")
 
 function numberTypeParamValidator(number){
     if (Number.isNaN(parseInt(number)))
-    return {status:200, error:undefined, data:teacher}
+    return {status:200, error:undefined, data:user}
 }class UserController {
     async index() {
        const users =  await Database.table('users')    
@@ -67,7 +68,7 @@ function numberTypeParamValidator(number){
         
         const hashedPassword = await Hash.make(password)
 
-       const teacher = await Database
+       const user = await Database
        .table('users')
        .insert({first_name,last_name,email,password:hashedPassword})
 
